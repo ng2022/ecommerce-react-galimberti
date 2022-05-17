@@ -1,4 +1,8 @@
+//STYLES
 import "./NavBar.css";
+
+// COMPONENTS
+import CartWidget from '../CartWidget/CartWidget';
 
 //IMAGES
 import logo from '../../assets/icons/logo-ecommerce.png';
@@ -14,6 +18,7 @@ const NavBar = () => {
             <li>Products</li>
             <li>About</li>
             <li>Contact</li>
+            <li><CartWidget /></li>
         </ul>
     </nav>
     );
