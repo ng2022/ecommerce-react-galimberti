@@ -1,11 +1,14 @@
 // Material-UI
 import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 
+//COMPONENTS
+import ItemCount from '../ItemCount/ItemCount';
 
-const ItemListContainer = ({name, description, img,}) => {
+const ItemListContainer = ({name, description, img, initial, stock}) => {
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardMedia
@@ -22,6 +25,9 @@ const ItemListContainer = ({name, description, img,}) => {
           {description}
         </Typography>
       </CardContent>
+      <CardActions>
+        <ItemCount initial={initial} stock={stock} />
+      </CardActions>
     </Card>
   );
 }
