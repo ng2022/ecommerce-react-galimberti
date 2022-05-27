@@ -1,33 +1,65 @@
 // Material-UI
 import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Typography from '@mui/material/Typography';
+
+// HOOKS AND STATES
+import { useState, useEffect } from 'react';
 
 //COMPONENTS
-import ItemCount from '../ItemCount/ItemCount';
+import ItemList from '../ItemList/ItemList';
 
-const ItemListContainer = ({name, description, img, initial, stock}) => {
+const ItemListContainer = ({}) => {
+
+  const [items, setItems] = useState([])
+      
+  const products = [
+    {
+      title: 'Product 1',
+      price: '$1.99',
+      image: 'https://source.unsplash.com/random/400x400',
+      stock: 10,
+      id: 1,
+    },
+    {
+      title: 'Product 2',
+      price: '$2.99',
+      image: 'https://source.unsplash.com/random/400x400',
+      stock:  5,
+      id: 2,
+    },
+    {
+      title: 'Product 3',
+      price: '$3.99',
+      image: 'https://source.unsplash.com/random/400x400',
+      stock: 3,
+      id: 3,
+    },
+  ]
+  
+  const getProducts = () => {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve(products)
+      }, 4000);
+    })
+  }
+
+  useEffect ( () => {
+    getProducts()
+      .then( (res) => {
+        //console.log(res)
+          setItems (res)
+    })
+      .catch( (err) => {
+        //console.log("Failed call!")
+    })
+      .finally( () => {
+        //console.log("Finally!")
+    })
+  }, [])
+
   return (
     <Card sx={{ maxWidth: 345 }}>
-      <CardMedia
-        component="img"
-        height="140"
-        image={img}
-        alt="green iguana"
-      />
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-          {name}
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-          {description}
-        </Typography>
-      </CardContent>
-      <CardActions>
-        <ItemCount initial={initial} stock={stock} />
-      </CardActions>
+      <ItemList products={products}/>
     </Card>
   );
 }

@@ -7,20 +7,15 @@ import userImage from './assets/images/user-img.png';
 //COMPONENTS
 import NavBar from './components/NavBar/NavBar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+import ItemList from './components/ItemList/ItemList';
 
 function App() {
   return (
     <>
     <NavBar />
     <div className='UserSection'>
-    <ItemListContainer 
-    name='Marco Polo'
-    description='Prova prova prova.'
-    img={userImage}
-    initial={6}
-    stock={15}
-    />
-    <ItemListContainer 
+{/*     <ItemListContainer /> */}
+{/*     <ItemListContainer 
     name='Galileo Galilei'
     description='Prova prova prova.'
     img={userImage}
@@ -33,8 +28,9 @@ function App() {
     img={userImage}
     initial={1}
     stock={10}
-    />
+    /> */}
     </div>
+    <ItemList />
     </>
 
   );
