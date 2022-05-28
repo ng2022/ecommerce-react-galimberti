@@ -7,7 +7,7 @@ import { useState, useEffect } from 'react';
 //COMPONENTS
 import ItemList from '../ItemList/ItemList';
 
-const ItemListContainer = ({}) => {
+const ItemListContainer = () => {
 
   const [items, setItems] = useState([])
       
@@ -47,7 +47,7 @@ const ItemListContainer = ({}) => {
     getProducts()
       .then( (res) => {
         //console.log(res)
-          setItems (res)
+          setItems(res)
     })
       .catch( (err) => {
         //console.log("Failed call!")
