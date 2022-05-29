@@ -18,7 +18,7 @@ const ItemList = ({products}) => {
                 console.log('item actual: ', products)
                 return (
                   <>
-                  <Grid container spacing={5}>  
+                  <Grid container spacing={2}>  
                   <Grid item xs={12} key={id}>  
                     <Item title={title} price={price} image={image} stock={stock} id={id}/>
                     <CardActions>
