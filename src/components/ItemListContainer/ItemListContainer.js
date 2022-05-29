@@ -18,6 +18,7 @@ const ItemListContainer = () => {
       image: 'https://source.unsplash.com/random/400x400',
       stock: 10,
       id: 1,
+      initial: 1,
     },
     {
       title: 'Product 2',
@@ -25,6 +26,7 @@ const ItemListContainer = () => {
       image: 'https://source.unsplash.com/random/400x400',
       stock:  5,
       id: 2,
+      initial: 1,
     },
     {
       title: 'Product 3',
@@ -32,6 +34,7 @@ const ItemListContainer = () => {
       image: 'https://source.unsplash.com/random/400x400',
       stock: 3,
       id: 3,
+      initial: 1,
     },
   ]
   

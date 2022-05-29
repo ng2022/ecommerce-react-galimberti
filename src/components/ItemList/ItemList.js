@@ -1,26 +1,36 @@
 
 // MATERIAL UI
 import Grid from '@mui/material/Grid'
+import { CardActions } from '@mui/material';
+
 
 // COMPONENTS
 import Item from '../Item/Item';
+import ItemCount from '../ItemCount/ItemCount';
 
 
-const ItemList = ({product}) => {
+const ItemList = ({products}) => {
 
     return (
-       <>       
+       <>     
             {
-              product.map(({title, price, image, stock, id}) => {
-                console.log('item actual : ', product)
+              products.map(({title, price, image, stock, id, initial}) => {
+                console.log('item actual: ', products)
                 return (
-                <Grid item md={3} key={id}>
-                <Item title={title} price={price} image={image} stock={stock} id={id}/>
-                </Grid>
+                  <>
+                  <Grid container spacing={5}>  
+                  <Grid item xs={12} key={id}>  
+                    <Item title={title} price={price} image={image} stock={stock} id={id}/>
+                    <CardActions>
+                      <ItemCount initial={initial} stock={stock}/>
+                    </CardActions>
+                  </Grid>
+                  </Grid>
+                  </>
                 )
               })
             }    
-       </>
+        </>
     )
 }
 
