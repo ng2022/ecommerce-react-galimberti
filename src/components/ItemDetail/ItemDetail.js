@@ -32,7 +32,7 @@ const ItemDetail = ({data}) => {
         <div>
             <h1>Item Detail</h1>
         </div>
-        <Box sx={{ flexGrow: 1 }}>
+        <Box sx={{ flexGrow: 1 }} mb={10}>
             <Grid container spacing={3}>
                 <Grid item xs ml={5}>
                     <CardMedia
