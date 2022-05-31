@@ -23,11 +23,11 @@ function ItemCount ({initial, stock, onAdd}) {
     return (
     <ButtonGroup variant="outlined" aria-label="outlined button group">
         <Button onClick={rest}>-</Button>
-        <Box component="span" sx={{ p: 2, border: '1px solid'}}>
+        <Box component="span" sx={{ p: 2, border: '1px #1a76d2 solid'}}>
         <Typography>{stock ==0 ? 0 : counter}</Typography>
         </Box>
         <Button onClick={add}>+</Button>
-        <Button onClick={onAdd = () => alert(counter)} disabled={stock <1}>Add product</Button>
+        <Button variant="contained" onClick={onAdd = () => alert(counter)} disabled={stock <1}>Add product</Button>
     </ButtonGroup>
     );
 }
