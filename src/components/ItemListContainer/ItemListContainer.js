@@ -37,12 +37,14 @@ const ItemListContainer = () => {
 
   return (
     <Box sx={{  display: 'flex',
-                    flexDirection: 'row',
-                    flexWrap: 'wrap',
-                    alignContent: 'flex-start',
-                    mt:5,
-                    bgcolor: 'background.paper',
-      }} spacing={10}>
+                flexDirection: 'row',
+                flexWrap: 'wrap',
+                alignContent: 'flex-start',              
+                alignItems: 'center',
+                mt:5,
+                mr:5,
+                bgcolor: 'background.paper',
+      }}>
         <ItemList products={products}/>
     </Box>
   );

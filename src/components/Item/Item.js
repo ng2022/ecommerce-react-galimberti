@@ -8,7 +8,7 @@ import Typography from '@mui/material/Typography';
   
   return (
     <>
-    <Card sx={{ maxWidth:500, ml:5, mr:5, mb:5 }}>
+    <Card sx={{ minWidth:200, ml:5, mb:5 }}>
         <CardMedia
           component="img"
           height="200"
