@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 //STYLES
 import "./NavBar.css";
 
@@ -11,14 +13,26 @@ const NavBar = () => {
     return (
     <nav className="Menu">
         <ul>
-            <li>
-                <img src={logo} alt="logo" width="50px" />
-            </li>
-            <li>Home</li>
-            <li>Products</li>
-            <li>About</li>
-            <li>Contact</li>
-            <li><CartWidget /></li>
+            <Link to="/">
+                <li>
+                    <img src={logo} alt="logo" width="50px" />
+                </li>
+            </Link>
+            <Link to="/">
+                <li>Home</li>
+            </Link>
+            <Link to="/products">
+                <li>Products</li>
+            </Link>    
+            <Link to="/about">
+                <li>About</li>
+            </Link>
+            <Link to="/contact">
+                <li>Contact</li>
+            </Link>
+            <Link to="/cart">
+                <li><CartWidget /></li>
+            </Link>
         </ul>
     </nav>
     );

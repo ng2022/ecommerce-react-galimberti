@@ -1,12 +1,13 @@
 // Material-UI
-import Card from '@mui/material/Card';
+import Box from '@mui/material/Box';
 
 // HOOKS AND STATES
 import { useState, useEffect } from 'react';
 
 //COMPONENTS
-import ItemList from '../ItemList/ItemList';
 import products from '../utilities/productsMock';
+import ItemList from '../ItemList/ItemList';
+
 
 const ItemListContainer = () => {
 
@@ -35,9 +36,15 @@ const ItemListContainer = () => {
   }, [])
 
   return (
-    <Card sx={{ maxWidth: 345 }}>
-      <ItemList products={products}/>
-    </Card>
+    <Box sx={{  display: 'flex',
+                    flexDirection: 'row',
+                    flexWrap: 'wrap',
+                    alignContent: 'flex-start',
+                    mt:5,
+                    bgcolor: 'background.paper',
+      }} spacing={10}>
+        <ItemList products={products}/>
+    </Box>
   );
 }
 

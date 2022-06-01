@@ -23,6 +23,46 @@ const products = [
       id: 3,
       initial: 1,
     },
+    {
+      title: 'Product 4',
+      price: '$3.99',
+      image: 'https://source.unsplash.com/random/400x400',
+      stock: 3,
+      id: 4,
+      initial: 1,
+    },
+    {
+      title: 'Product 5',
+      price: '$3.99',
+      image: 'https://source.unsplash.com/random/400x400',
+      stock: 3,
+      id: 5,
+      initial: 1,
+    },
+    {
+      title: 'Product 6',
+      price: '$3.99',
+      image: 'https://source.unsplash.com/random/400x400',
+      stock: 6,
+      id: 3,
+      initial: 1,
+    },
+    {
+      title: 'Product 7',
+      price: '$3.99',
+      image: 'https://source.unsplash.com/random/400x400',
+      stock: 7,
+      id: 3,
+      initial: 1,
+    },
+    {
+      title: 'Product 8',
+      price: '$3.99',
+      image: 'https://source.unsplash.com/random/400x400',
+      stock: 8,
+      id: 3,
+      initial: 1,
+    },
   ]
 
   const producto4 = {
@@ -30,7 +70,7 @@ const products = [
     price: '$15.99',
     image: 'https://source.unsplash.com/random/400x400',
     stock: 10,
-    id: 1,
+    id: 4,
     initial: 1,
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
     }

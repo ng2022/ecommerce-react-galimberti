@@ -1,13 +1,9 @@
 // MATERIAL UI
-import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import { CardActionArea } from '@mui/material';
 import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
 
@@ -18,14 +14,6 @@ import { producto4 } from '../utilities/productsMock';
 const ItemDetail = ({data}) => {
 
     console.log('Data desde ItemDetail: ', data);
-
-    const Item = styled(Paper)(({ theme }) => ({
-        backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
-        ...theme.typography.body2,
-        padding: theme.spacing(1),
-        textAlign: 'center',
-        color: theme.palette.text.secondary,
-      }));
 
     return (
         <>
@@ -81,7 +69,7 @@ const ItemDetail = ({data}) => {
                                 </ButtonGroup> 
                             </Box>                  
                             <Box ml={5} mr={5} mt={5}>
-                                <ItemCount />
+                                <ItemCount initial={producto4.initial} stock={producto4.stock} />
                             </Box> 
                         </Paper>
                     </Box>
