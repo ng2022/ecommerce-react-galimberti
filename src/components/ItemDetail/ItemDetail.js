@@ -26,8 +26,8 @@ const ItemDetail = ({data}) => {
                     <CardMedia
                         component="img"
                         height="100"
-                        image="https://source.unsplash.com/random/400x400"
-                        alt="green iguana"
+                        image={data.image}
+                        alt="green iguana" 
                     />
                 </Grid>
                 <Grid item xs={5}>
@@ -35,7 +35,7 @@ const ItemDetail = ({data}) => {
                     <CardMedia
                         component="img"
                         height="600"
-                        image="https://source.unsplash.com/random/400x400"
+                        image={data.image}
                         alt="green iguana"
                     />
                 </Paper>

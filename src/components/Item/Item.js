@@ -3,8 +3,10 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
+import { Link } from 'react-router-dom';
 
- function Item ({ title, price, image, stock })  {
+ function Item ({ title, price, image, stock, id })  {
   
   return (
     <>
@@ -24,6 +26,9 @@ import Typography from '@mui/material/Typography';
             {stock} in sotck
           </Typography>
         </CardContent>
+        <Button variant="contained" fullWidth={true} >
+          <Link to={`/product/${id}`}>DETAIL</Link> 
+        </Button>
     </Card>
     </>
   );
