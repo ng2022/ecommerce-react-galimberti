@@ -19,6 +19,7 @@ const ItemList = ({products}) => {
                           image={image}
                           stock={stock}
                           id={id}
+                          initial={initial}
                         />
                 )
               })

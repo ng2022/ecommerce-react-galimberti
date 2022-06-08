@@ -1,5 +1,6 @@
 // Material-UI
 import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
 
 // HOOKS AND STATES
 import { useState, useEffect } from 'react';
@@ -17,10 +18,10 @@ const ProductsPage = () => {
     const { category } = useParams();
 
     useEffect ( () => {
-        setItems([])
         getProducts()
           .then( (res) => {
             //console.log(res)
+            setItems([])
             filterByCategory(res)
         })
       }, [category])

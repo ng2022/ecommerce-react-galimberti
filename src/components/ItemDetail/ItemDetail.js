@@ -6,14 +6,16 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
+import { Link } from 'react-router-dom';
 
 // COMPONENTS
 import ItemCount from '../ItemCount/ItemCount';
 import { producto4 } from '../utilities/productsMock';
+import { useState } from 'react';
 
 const ItemDetail = ({data}) => {
-
-    console.log('Data desde ItemDetail: ', data);
+    
+    const [showButton, setShowButton] = useState(false);
 
     return (
         <>
@@ -67,10 +69,15 @@ const ItemDetail = ({data}) => {
                                     <Button sx={{ color: 'text.secondary' }}>Blue</Button>
                                     <Button sx={{ color: 'text.secondary' }}>White Pearl</Button>
                                 </ButtonGroup> 
-                            </Box>                  
+                            </Box>
+                            { !showButton ?                  
                             <Box ml={5} mr={5} mt={5}>
-                                <ItemCount initial={producto4.initial} stock={producto4.stock} />
-                            </Box> 
+                                <ItemCount initial={producto4.initial} stock={producto4.stock} setShowButton={setShowButton} />
+                            </Box>
+                            :
+                            <Box ml={5} mr={5} mt={1}>
+                                <Button variant="contained" ><Link to='/cart'>Go to cart</Link></Button>    
+                            </Box> }
                         </Paper>
                     </Box>
                 </Grid>
