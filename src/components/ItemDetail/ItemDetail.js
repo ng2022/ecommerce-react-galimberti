@@ -6,16 +6,21 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
-import { Link } from 'react-router-dom';
 
 // COMPONENTS
 import ItemCount from '../ItemCount/ItemCount';
-import { producto4 } from '../utilities/productsMock';
-import { useState } from 'react';
 
-const ItemDetail = ({data}) => {
-    
-    const [showButton, setShowButton] = useState(false);
+// STATES
+import { useContext } from 'react';
+import { CartContext } from '../../context/CartContext';
+
+const ItemDetail = ({ data }) => {
+
+    const { addProductToCart, isProductInCart, removeProductFromCart } = useContext(CartContext);
+
+    const senItemToCart = (qty) => {
+        addProductToCart({...data, quantity: qty});
+    }
 
     return (
         <>
@@ -69,15 +74,10 @@ const ItemDetail = ({data}) => {
                                     <Button sx={{ color: 'text.secondary' }}>Blue</Button>
                                     <Button sx={{ color: 'text.secondary' }}>White Pearl</Button>
                                 </ButtonGroup> 
-                            </Box>
-                            { !showButton ?                  
+                            </Box>                 
                             <Box ml={5} mr={5} mt={5}>
-                                <ItemCount initial={producto4.initial} stock={producto4.stock} setShowButton={setShowButton} />
+                                {isProductInCart(data.id) ? <Button variant="contained" onClick={() => {removeProductFromCart(data.id)}}>Change</Button> : <ItemCount stock={data.stock} onAdd={senItemToCart} />}
                             </Box>
-                            :
-                            <Box ml={5} mr={5} mt={1}>
-                                <Button variant="contained" ><Link to='/cart'>Go to cart</Link></Button>    
-                            </Box> }
                         </Paper>
                     </Box>
                 </Grid>

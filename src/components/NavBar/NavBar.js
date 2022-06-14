@@ -4,7 +4,7 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 
 // STATES
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 
 // REACT ROUTER
 import { Link } from "react-router-dom";
@@ -14,6 +14,8 @@ import "./NavBar.css";
 
 // COMPONENTS
 import CartWidget from '../CartWidget/CartWidget';
+import ThemeSwitch from './ThemeSwitch';
+import { ThemeContext } from '../../context/ThemeContext';
 
 //IMAGES
 import logo from '../../assets/icons/logo-ecommerce.png';
@@ -22,6 +24,7 @@ import logo from '../../assets/icons/logo-ecommerce.png';
 
 const NavBar = () => {
 
+    const {darkTheme} = useContext(ThemeContext);
     const [anchorEl, setAnchorEl] = useState(null);
     const open = Boolean(anchorEl);
     const handleClick = (event) => {
@@ -34,7 +37,7 @@ const NavBar = () => {
     const categories = ['pants', 'shirts']
 
     return (
-    <nav className="Menu">
+    <nav className={`Menu ${darkTheme ? 'dark-mode' : ''}`}>
         <ul>
             <li>
                 <Link to="/"><img src={logo} alt="logo" width="50px" /></Link>
@@ -72,6 +75,9 @@ const NavBar = () => {
             </li>
             <li>
                 <Link to="/contact">Contact</Link>
+            </li>
+            <li>
+                <ThemeSwitch />
             </li>
             <li>
                 <Link to="/cart"><CartWidget /></Link>

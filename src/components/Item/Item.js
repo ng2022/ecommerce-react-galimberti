@@ -6,11 +6,17 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import { Link } from 'react-router-dom';
 
+import { useContext } from 'react';
+
+import { ThemeContext } from '../../context/ThemeContext';
+
  function Item ({ title, price, image, stock, id })  {
+
+  const { darkTheme } = useContext(ThemeContext);
   
   return (
     <>
-    <Card sx={{ minWidth:200, ml:5, mb:5 }}>
+    <Card sx={{ minWidth:200, ml:5, mb:5 }} className={`${darkTheme ? 'dark-mode' : ''}`}>
         <CardMedia
           component="img"
           height="200"
