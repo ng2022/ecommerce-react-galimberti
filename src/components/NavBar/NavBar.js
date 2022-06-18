@@ -80,7 +80,7 @@ const NavBar = () => {
                 <ThemeSwitch />
             </li>
             <li>
-                <Link to="/cart"><CartWidget /></Link>
+                <CartWidget />
             </li>
         </ul>
     </nav>

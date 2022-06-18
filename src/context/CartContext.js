@@ -6,6 +6,7 @@ const CartProvider = ({ children }) => {
 
     // Estado carrito    
     const [cartListItems, setCartListItems] = useState([])
+    const [totalPrice, setTotalPrice] = useState(0)
 
     useEffect(() => {
         console.log(cartListItems)
@@ -14,6 +15,7 @@ const CartProvider = ({ children }) => {
     // Agregar producto al carrito
     const addProductToCart = (product) => {
         setCartListItems([...cartListItems, product])
+        setTotalPrice(totalPrice + product.price * product.quantity)
     }
 
     // Verificar si el producto está en el carrito
@@ -32,13 +34,15 @@ const CartProvider = ({ children }) => {
         setCartListItems([])
     }
 
+
     const values = {
         cartListItems,
         setCartListItems,
         addProductToCart,
         isProductInCart,
         removeProductFromCart,
-        clearCart
+        clearCart,
+        totalPrice,
     }
 
     return (

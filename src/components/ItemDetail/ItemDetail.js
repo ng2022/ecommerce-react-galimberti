@@ -6,6 +6,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
+import { Link } from "react-router-dom";
 
 // COMPONENTS
 import ItemCount from '../ItemCount/ItemCount';
@@ -76,7 +77,7 @@ const ItemDetail = ({ data }) => {
                                 </ButtonGroup> 
                             </Box>                 
                             <Box ml={5} mr={5} mt={5}>
-                                {isProductInCart(data.id) ? <Button variant="contained" onClick={() => {removeProductFromCart(data.id)}}>Change</Button> : <ItemCount stock={data.stock} onAdd={senItemToCart} />}
+                                {isProductInCart(data.id) ? <Button variant="contained" onClick={() => {removeProductFromCart(data.id)}}><Link to='/cart'>Go to cart</ Link></Button> : <ItemCount stock={data.stock} onAdd={senItemToCart} />}
                             </Box>
                         </Paper>
                     </Box>

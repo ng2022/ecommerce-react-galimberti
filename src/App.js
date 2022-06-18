@@ -14,6 +14,7 @@ import ProductsPage from './pages/Products';
 import Home from './pages/Home';
 import ThemeProvider from './context/ThemeContext';
 import CartProvider from './context/CartContext';
+import Cart from './pages/Cart/Cart';
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
               <Route path='/' element={<Home />} />
               <Route path='/products/:category' element={<ProductsPage />} />
               <Route path='/product/:id' element={<ItemDetailContainer />} />
+              <Route path='/cart' element={<Cart />} />
               <Route path='*' element={<h1>404 Error</h1>} />
             </Routes>
         </BrowserRouter>
