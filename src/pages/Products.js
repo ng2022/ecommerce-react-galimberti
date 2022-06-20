@@ -1,48 +1,17 @@
 // Material-UI
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
 
 // HOOKS AND STATES
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
 //COMPONENTS
-import products from '../components/utilities/productsMock';
+/* import products from '../components/utilities/productsMock'; */
 import ItemList from '../components/ItemList/ItemList';
+import db from '../components/utilities/firebaseConfiguration';
 
 
 const ProductsPage = () => {
-
-    const [items, setItems] = useState([])
-
-    const { category } = useParams();
-
-    useEffect ( () => {
-        getProducts()
-          .then( (res) => {
-            //console.log(res)
-            setItems([])
-            filterByCategory(res)
-        })
-      }, [category])
-
-  
-    const getProducts = () => {
-      return new Promise((resolve, reject) => {
-        //setTimeout(() => {
-          resolve(products)
-        //}, 4000);
-      })
-    }
-  
-
-    const filterByCategory = (array) => { 
-        return array.map ( (item) => {
-            if (item.category === category) {
-                return setItems (items => [...items, item])
-            }
-        })
-    }
   
     return (
         <>
@@ -56,7 +25,7 @@ const ProductsPage = () => {
                     mr:5,
                     bgcolor: 'background.paper',
             }}>
-            <ItemList products={items}/>
+            <ItemList />
         </Box>
       </>
     );

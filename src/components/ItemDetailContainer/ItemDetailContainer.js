@@ -1,10 +1,15 @@
 // COMPONENTS
 import ItemDetail from "../ItemDetail/ItemDetail";
-import products from "../utilities/productsMock";
 
 // HOOKS
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+
+// FIREBASE
+import { doc, getDoc } from "firebase/firestore";
+
+// DB
+import db from "../utilities/firebaseConfiguration";
 
 const ItemDetailContainer = () => {
 
@@ -22,22 +27,30 @@ const ItemDetailContainer = () => {
     } */
 
     useEffect(() => {
-  /*       getItem()
-         .then ( (res) => {
-            console.log(res);
-         setProduct(res);   
-        }) */
-        if (productFilter === undefined) {
+        getProduct()
+         .then ( (prod) => {
+            console.log(prod);
+         setProduct(prod);   
+        })
+/*         if (productFilter === undefined) {
             navigate("/not-found");
         } else {
         setProduct(productFilter);
-        }
+        } */
 
-    }, [])
+    }, [id])
 
-     const productFilter = products.find ( (product) => {
+    const getProduct = async () => {
+        const docRef = doc(db,'products', id);
+        const docSnaptshop = await getDoc(docRef);
+        let product = docSnaptshop.data();
+        product.id = docSnaptshop.id;
+        return product;
+    }
+
+/*      const productFilter = products.find ( (product) => {
         return product.id == id
-     })
+     }) */
 
 
     return (

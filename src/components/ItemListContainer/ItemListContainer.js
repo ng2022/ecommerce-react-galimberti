@@ -5,35 +5,11 @@ import Box from '@mui/material/Box';
 import { useState, useEffect } from 'react';
 
 //COMPONENTS
-import products from '../utilities/productsMock';
+/* import products from '../utilities/productsMock'; */
 import ItemList from '../ItemList/ItemList';
 
 
 const ItemListContainer = () => {
-
-  const [items, setItems] = useState([])
-  
-  const getProducts = () => {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve(products)
-      }, 4000);
-    })
-  }
-
-  useEffect ( () => {
-    getProducts()
-      .then( (res) => {
-        //console.log(res)
-          setItems(res)
-    })
-      .catch( (err) => {
-        //console.log("Failed call!")
-    })
-      .finally( () => {
-        //console.log("Finally!")
-    })
-  }, [])
 
   return (
     <Box sx={{  display: 'flex',
@@ -45,7 +21,7 @@ const ItemListContainer = () => {
                 mr:5,
                 bgcolor: 'background.paper',
       }}>
-        <ItemList products={products}/>
+        <ItemList />
     </Box>
   );
 }
