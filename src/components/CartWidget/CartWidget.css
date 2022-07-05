@@ -1,0 +1,93 @@
+.container-general {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 30px;
+    margin-top: 0px;
+}
+
+.containerButtonCartWidget {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+}
+
+.titleCartWidget{
+    font-family: 'Poppins', sans-serif;
+    font-size: 32px;
+    font-weight: 300;
+    color: #555;
+    margin-top: 20px;
+    padding: 0px 30px;
+}
+
+.buttonCartWidget {
+    background-color: #7effc5;
+    border-radius: 50px;
+    color: #555;
+    display: inline-block;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: none;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    padding: 9px 12px;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    width: 40%;
+}
+
+.buttonCartWidget:hover {
+    background-color: #00df7b;
+    border-color: none;
+    color: rgb(255, 255, 255);
+}
+
+.buttonCartWidgetContinue {
+    border-radius: 50px;
+    color: #555;
+    display: inline-block;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    text-transform: none;
+    margin-bottom: 0;
+    padding: 9px 12px;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    width: 40%;
+}
+
+.buttonCartWidgetContinue:hover {
+    background-color: #ffffff;
+    border: 1px solid #3f3f3f;
+    color: #555;
+}
+
+.cartWidgetTableContent {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between ;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+    border-bottom: 1px solid #3f3f3f;
+}
+
+.cartWidgetTableContentImg{
+    width: 80px;
+    height: auto;
+}
+
+.cartWidgetTableContentImg > img{
+    width: 100%;
+    height: auto;
+}

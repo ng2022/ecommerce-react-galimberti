@@ -25,14 +25,14 @@ import logo from '../../assets/icons/logo-ecommerce.png';
 const NavBar = () => {
 
     const {darkTheme} = useContext(ThemeContext);
-    const [anchorEl, setAnchorEl] = useState(null);
-    const open = Boolean(anchorEl);
+/*     const [anchorEl, setAnchorEl] = useState(null); */
+/*     const open = Boolean(anchorEl);
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
     };
     const handleClose = () => {
         setAnchorEl(null);
-    };
+    }; */
 
     const categories = ['pants', 'shirts']
 
@@ -46,29 +46,14 @@ const NavBar = () => {
                 <Link to="/">Home</Link>
             </li>
             <li>
-            <Button
-                id="basic-button"
-                aria-controls={open ? 'basic-menu' : undefined}
-                aria-haspopup="true"
-                aria-expanded={open ? 'true' : undefined}
-                onClick={handleClick}
-            >
-            Products
-            </Button>
-            <Menu
-                id="basic-menu"
-                anchorEl={anchorEl}
-                open={open}
-                onClose={handleClose}
-                MenuListProps={{
-                'aria-labelledby': 'basic-button',
-                }}
-            >
-                {categories.map( (cat) => {
-                    return <MenuItem onClick={handleClose}><Link to={`/products/${cat}`}>{cat}</Link></MenuItem>
+                <Link to="/products/pants">Man</Link>
+{/*                 {categories.map( (cat) => {
+                    return <Link to={`/products/${cat}`}>{cat}</Link>
                 })
-                }
-            </Menu>
+                } */}
+            </li>
+            <li>
+                <Link to="/products/shirts">Women</Link>
             </li>
             <li>
                 <Link to="/about">About</Link>
@@ -76,9 +61,9 @@ const NavBar = () => {
             <li>
                 <Link to="/contact">Contact</Link>
             </li>
-            <li>
+{/*             <li>
                 <ThemeSwitch />
-            </li>
+            </li> */}
             <li>
                 <CartWidget />
             </li>

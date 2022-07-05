@@ -68,14 +68,14 @@ const Cart = () => {
 
     return (
         <Container className='container-general'> 
-        <h1>Checkout: </h1>
+        <h3>Checkout:</h3>
         <div className='cart-section'>
             <div className='col-cart-table__head'>
-                <h2>Producto</h2>
-                <h2>Descripcion</h2>
-                <h2>Precio Unitario</h2>
-                <h2>Cantidad</h2>
-                <h2>Quitar</h2>
+                <h5>Product</h5>
+                <h5>Description</h5>
+                <h5>Price</h5>
+                <h5>Quantity</h5>
+                <h5>Delete</h5>
             </div>
             {cartListItems.map( (item) => {
                 const {id, title, image, price, quantity} = item
@@ -85,13 +85,13 @@ const Cart = () => {
                             <img src={image} />
                         </div>
                         <div className='cart-table__content-title'>
-                            <p>{title}</p>
+                            <h6>{title}</h6>
                         </div>
                         <div className='cart-table__content-price'>
-                            <p>$ {price}</p>
+                            <h6>$ {price}</h6>
                         </div>
                         <div className='cart-table__content-quantity'>
-                            <p>{quantity} </p>
+                            <h6>{quantity} </h6>
                         </div>
                         <div className='cart-table__content-price'>
                             <button className='btn-delete' onClick={() => removeProductFromCart(item)}>
@@ -102,37 +102,49 @@ const Cart = () => {
                 )
             })}
             <div className='cart-footer'>
-                <Button className='btn-custom'><Link to='/'>Continue shopping</ Link></Button>
                 <div className='cart-checkout-details'>
                     <div className='cart-checkout__subtotal'>
-                        <p>Subtotal</p>
-                        <span>$ {totalPrice}</span>
+                        <h5>Subtotal:</h5>
+                        <h5>$ {totalPrice}</h5>
                     </div>
-                    <div className='cart-checkout__total'>
-                        <p>Total</p>
-                        <span>$ {totalPrice}</span>
+                    <div className='cart-checkout__subtotal'>
+                        <h5>Total:</h5>
+                        <h5>$ {totalPrice}</h5>
                     </div>
                 </div>
             </div>
-            <Button onClick={() => setShowModal(true)}>Purchase</Button>
+            <div className='containerButtonCartWidget'>
+            <Link className='buttonCartWidgetContinue' to='/'>Continue shopping</ Link> 
+            <Link onClick={() => setShowModal(true)} className='buttonCartWidget' to='/cart'>Purchase</ Link>
+            </div>
         </div>
-        <Modal title={'Formulario de contacto'} open={showModal} handleClose={() => setShowModal(false)}>
+        <Modal title={'Contact Form'} open={showModal} handleClose={() => setShowModal(false)}>
             { success ? (
-                <div>
-                    Orden ok {success}
-                    <button onClick={completeOrder}>Aceptar</button>
+                <div className="form-contact">
+                    <h5>The order was successful!</h5>
+                    <div>
+                        <h5>Order number:</h5>
+                        <h6>{success}</h6>
+                    </div>
+                    <button className='buttonCartWidgetContinue' onClick={completeOrder}>Continue to shopping</button>
                 </div>
             ) : (
             <form className="form-contact" onSubmit={handleSubmit}>
                     <TextField 
+                        fullWidth
+                        margin="dense"
                         id="outlined-basic" 
                         name="name"
                         label="Name and Surname" 
                         variant="outlined"
+                        defaultValue="Normal"
+
                         value={formValue.name}
                         onChange={handleChange} 
                     />
-                    <TextField 
+                    <TextField
+                        fullWidth
+                        margin='dense' 
                         id="outlined-basic" 
                         name="phone"
                         label="Telephone" 
@@ -141,6 +153,8 @@ const Cart = () => {
                         onChange={handleChange} 
                     />
                     <TextField 
+                        fullWidth
+                        margin='dense'
                         id="outlined-basic" 
                         name="email"
                         label="Mail" 
@@ -148,7 +162,7 @@ const Cart = () => {
                         value={formValue.email}
                         onChange={handleChange} 
                     />
-                <button type='submit'>Send</button>
+                <button className='buttonCartWidget' type='submit'>Purchase</button>
             </form> )
             }
             

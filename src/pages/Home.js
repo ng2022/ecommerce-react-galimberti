@@ -1,12 +1,11 @@
-import ItemList from "../components/ItemList/ItemList";
+// COMPONENTS
 import ItemListContainer from "../components/ItemListContainer/ItemListContainer";
+import SliderHome from "../components/Slider/SliderHome";
 
 const Home = () => {
     return (
         <>
-        <div>
-        <h1>Home</h1>
-        </div>
+        <SliderHome />
         <ItemListContainer />
         </>
     )

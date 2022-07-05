@@ -1,0 +1,129 @@
+.swiper {
+    width: 100%;
+    height: 500px;
+  }
+  
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+  
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+  }
+  
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .swiper-button-prev {
+    color: rgb(255, 255, 255);
+  }
+
+  .swiper-button-next {
+    color: rgb(255, 255, 255);
+  }
+
+  .swiper-pagination .swiper-pagination-bullet {
+    opacity: 1;
+    border: white solid 1px;
+    background-color: transparent;
+}
+.swiper-pagination .swiper-pagination-bullet-active {
+    background-color: white;
+}
+
+  .containerSLides {
+    position: relative;
+    width: 100%;
+  }
+
+  .containerSLides .buttonSlider {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    cursor: pointer;
+    border-radius: 50px;
+    background-color: #ffffff;
+    border: none;
+    color: #555;
+    display: inline-block;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    text-transform: none;
+    margin-bottom: 0;
+    padding: 9px 12px;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    width: 40%;
+  }
+
+  .containerSLides h2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    display: inline-block;
+    width: 40%;
+    color: #ffffff;
+  }
+
+  .containerSLides .buttonSlider:hover{
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    cursor: pointer;
+    border-radius: 50px;
+    background-color: transparent;
+    border: 1px solid rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
+    display: inline-block;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    text-transform: none;
+    margin-bottom: 0;
+    padding: 9px 12px;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    width: 40%;
+  }
+
+  .buttonSlider {
+    border-radius: 50px;
+    color: #555;
+    display: inline-block;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    text-transform: none;
+    margin-bottom: 0;
+    padding: 9px 12px;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    width: 40%;
+    z-index: 99;
+  }
