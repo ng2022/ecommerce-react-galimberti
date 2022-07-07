@@ -29,7 +29,7 @@ a:link, a:visited {
     color: rgb(0, 0, 0);
 }
 a:hover {
-    color: rgb(106, 0, 255);
+    color: #5100ff;
 }
 
 .dark-mode {

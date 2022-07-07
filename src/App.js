@@ -15,6 +15,7 @@ import Home from './pages/Home';
 import ThemeProvider from './context/ThemeContext';
 import CartProvider from './context/CartContext';
 import Cart from './pages/Cart/Cart';
+import Footer from './components/Footer/Footer';
 
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
               <Route path='/cart' element={<Cart />} />
               <Route path='*' element={<h1>404 Error</h1>} />
             </Routes>
+            <Footer />
         </BrowserRouter>
       </ThemeProvider>
     </CartProvider>

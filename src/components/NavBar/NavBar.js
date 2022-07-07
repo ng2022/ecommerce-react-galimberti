@@ -24,20 +24,10 @@ import logo from '../../assets/icons/logo-ecommerce.png';
 
 const NavBar = () => {
 
-    const {darkTheme} = useContext(ThemeContext);
-/*     const [anchorEl, setAnchorEl] = useState(null); */
-/*     const open = Boolean(anchorEl);
-    const handleClick = (event) => {
-        setAnchorEl(event.currentTarget);
-    };
-    const handleClose = () => {
-        setAnchorEl(null);
-    }; */
-
-    const categories = ['pants', 'shirts']
+const categories = ['man', 'women']
 
     return (
-    <nav className={`Menu ${darkTheme ? 'dark-mode' : ''}`}>
+    <nav>
         <ul>
             <li>
                 <Link to="/"><img src={logo} alt="logo" width="50px" /></Link>
@@ -46,14 +36,10 @@ const NavBar = () => {
                 <Link to="/">Home</Link>
             </li>
             <li>
-                <Link to="/products/pants">Man</Link>
-{/*                 {categories.map( (cat) => {
-                    return <Link to={`/products/${cat}`}>{cat}</Link>
-                })
-                } */}
+                <Link to="/products/man">Man</Link>
             </li>
             <li>
-                <Link to="/products/shirts">Women</Link>
+                <Link to="/products/women">Women</Link>
             </li>
             <li>
                 <Link to="/about">About</Link>
@@ -61,9 +47,6 @@ const NavBar = () => {
             <li>
                 <Link to="/contact">Contact</Link>
             </li>
-{/*             <li>
-                <ThemeSwitch />
-            </li> */}
             <li>
                 <CartWidget />
             </li>

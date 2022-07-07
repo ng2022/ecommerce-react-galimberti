@@ -5,25 +5,22 @@ import Box from '@mui/material/Box';
 import { useState, useEffect } from 'react';
 
 //COMPONENTS
-/* import products from '../utilities/productsMock'; */
 import ItemList from '../ItemList/ItemList';
+
+import Flicking from "@egjs/react-flicking";
 
 
 const ItemListContainer = () => {
 
   return (
-    <Box sx={{  display: 'flex',
-                flexDirection: 'row',
-                flexWrap: 'wrap',
-                alignContent: 'flex-start',              
-                alignItems: 'center',
-                mt:5,
-                mr:5,
-                bgcolor: 'background.paper',
-      }}>
-        <ItemList />
-    </Box>
-  );
+  <>
+  <Flicking horizontal={true} moveType="freeScroll" bound={true} inputType={["mouse"]} interruptable={true}>
+          <div className='flicking-camera'> 
+            <ItemList />
+          </div>
+    </Flicking>
+  </>
+  )
 }
 
 export default ItemListContainer;

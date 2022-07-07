@@ -1,0 +1,75 @@
+.flicking-viewport {
+    height: 440px;
+}
+
+.flicking-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center; 
+}
+
+.flicking-camera {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    position: relative;
+    width: 100%;
+    will-change: transform;
+    z-index: 1;
+}
+
+.carouselItem {
+    margin: 0px 20px;
+}
+
+.carouselItem:hover {
+    border: 1px solid rgb(81, 0, 255);
+
+}
+
+.carouselItemContent{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.carouselItem img {
+    width: 300px;
+    padding: 20px 20px 0px 20px;
+}
+
+.carouselItemContent p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: rgb(81, 0, 255);
+    margin: 0;
+}
+
+.buttonCardProduct {
+    background-color: #7effc5;
+    border-radius: 50px;
+    color: #555;
+    display: inline-block;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: none;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    padding: 9px 12px;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    width: 40%;
+}
+
+.buttonCardProduct:hover {
+    background-color: #00df7b;
+    border-color: none;
+    color: rgb(255, 255, 255);
+}

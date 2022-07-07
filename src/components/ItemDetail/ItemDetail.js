@@ -1,11 +1,3 @@
-// MATERIAL UI
-import Box from '@mui/material/Box';
-import Paper from '@mui/material/Paper';
-import Grid from '@mui/material/Grid';
-import CardMedia from '@mui/material/CardMedia';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
-import ButtonGroup from '@mui/material/ButtonGroup';
 import { Link } from "react-router-dom";
 
 // COMPONENTS
@@ -14,6 +6,9 @@ import ItemCount from '../ItemCount/ItemCount';
 // STATES
 import { useContext } from 'react';
 import { CartContext } from '../../context/CartContext';
+
+//CSS
+import './ItemDetail.css';
 
 const ItemDetail = ({ data }) => {
 
@@ -25,10 +20,33 @@ const ItemDetail = ({ data }) => {
 
     return (
         <>
-        <div>
-            <h1>Item Detail</h1>
-        </div>
-        <Box sx={{ flexGrow: 1 }} mb={10}>
+            <div className='containerItemDetail'>
+                <div className='thumbnailItemDetail'>
+                    <img src={data.image} alt={data.name} />
+                </div>
+                <div className='imageItemDetail'>
+                    <img src={data.image} alt={data.name} />
+                </div>
+                <div className='infoItemDetail'>
+                    <p>{data.category}</p>
+                    <h3>{data.title}</h3>
+                    <h5>{data.description}</h5>
+                    <p className="priceStyle">$ {data.price}</p>
+                    <div className="itemCountStyle">
+                    {isProductInCart(data.id) ? <Link className='buttonsItemDetail' onClick={() => {removeProductFromCart(data.id)}} to='/cart'>Go to cart</ Link> : <ItemCount stock={data.stock} onAdd={senItemToCart} />}
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+        {/* <Box sx={{ flexGrow: 1 }} mb={10}>
             <Grid container spacing={3}>
                 <Grid item xs ml={5}>
                     <CardMedia
@@ -83,7 +101,7 @@ const ItemDetail = ({ data }) => {
                     </Box>
                 </Grid>
             </Grid>
-        </Box>
+        </Box> */}
         </>
     )
 

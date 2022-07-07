@@ -28,7 +28,7 @@ const CartProvider = ({ children }) => {
 
 // Eliminar producto del carrito
 const removeProductFromCart = (product) => {
-    setCartListItems(cartListItems.filter( (cartProduct) => cartProduct.id !== product.id))
+    setCartListItems(cartListItems.filter( (cartProduct) => cartProduct.id !== product.id) )
 }
 
 // Limpiar carrito

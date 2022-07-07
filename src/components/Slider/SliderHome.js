@@ -23,7 +23,7 @@ function SliderHome () {
         spaceBetween={0}
         centeredSlides={true}
         autoplay={{
-          delay: 2500,
+          delay: 9000,
           disableOnInteraction: false,
         }}
         pagination={{
@@ -35,23 +35,23 @@ function SliderHome () {
       >
         <SwiperSlide>
         <div class="containerSLides">
-        <h2>Man collection</h2>
-        <Link className='buttonSlider' to='/products/pants'>Discover Man</ Link> 
-            <img src={ManHome} />
+          <h1>Man collection</h1>
+          <Link className='buttonSlider' to='/products/man'>Discover Man</ Link> 
+          <img src={ManHome} />
         </div>
         </SwiperSlide>
         <SwiperSlide>
         <div class="containerSLides">
-            <h2>Women collection</h2>
+            <h1>Women collection</h1>
+            <Link className='buttonSlider' to='/products/women'>Discover Women</ Link> 
             <img src={WomenHome} />
-            <button className="buttonSlider">Discover Women</button>
         </div>
         </SwiperSlide>
         <SwiperSlide>
         <div class="containerSLides">
-            <h2>About Us</h2>
+            <h1>About Us</h1>
+            <Link className='buttonSlider' to='/products/pants'>About Us</ Link> 
             <img src={AboutSliderHome} />
-            <button className="buttonSlider">About Us</button>
         </div>
         </SwiperSlide>
       </Swiper>

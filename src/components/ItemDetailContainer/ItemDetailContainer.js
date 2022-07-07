@@ -10,6 +10,7 @@ import { doc, getDoc } from "firebase/firestore";
 
 // DB
 import db from "../utilities/firebaseConfiguration";
+import { Title } from "@mui/icons-material";
 
 const ItemDetailContainer = () => {
 
@@ -17,27 +18,11 @@ const ItemDetailContainer = () => {
     const navigate = useNavigate();
     const [product, setProduct] = useState({});
 
-
- /*    const getItem = () => {
-        return new Promise((resolve, reject) => {
-            setTimeout(() => {
-                resolve(products);
-            }, 2000);
-        });
-    } */
-
     useEffect(() => {
         getProduct()
          .then ( (prod) => {
-            console.log(prod);
          setProduct(prod);   
         })
-/*         if (productFilter === undefined) {
-            navigate("/not-found");
-        } else {
-        setProduct(productFilter);
-        } */
-
     }, [id])
 
     const getProduct = async () => {
@@ -48,16 +33,8 @@ const ItemDetailContainer = () => {
         return product;
     }
 
-/*      const productFilter = products.find ( (product) => {
-        return product.id == id
-     }) */
-
-
     return (
         <>
-        <div>
-            <h1>Item Detail Container</h1>
-        </div>
         <ItemDetail data={product} />
         </>
     )   

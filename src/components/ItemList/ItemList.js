@@ -13,6 +13,8 @@ import Item from '../Item/Item';
 import { collection, getDocs, query, where } from "firebase/firestore";
 import db from '../utilities/firebaseConfiguration';
 
+import './ItemList.css'
+
 
 const ItemList = ({title}) => {
 
@@ -34,21 +36,10 @@ const getProducts = async () => {
   const productList = productSnapshot.docs.map((doc) => {
       let product = doc.data()
       product.id = doc.id
-      // console.log("product: ", product)
       return product
   })
   return productList
 }
-
-/*   const getProducts = async () => {
-    const productSnapshot = await getDocs(collection(db, "products"));
-    //console.log('productSnapshot: ', productSnapshot)
-    const productsList = productSnapshot.docs.map((doc) => {
-      let product = doc.data()
-      product.id = doc.id
-      return product
-    });
-  } */
 
   const filterFirebase = async () => {
     const productRef = collection(db, 'products')
@@ -65,15 +56,16 @@ const getProducts = async () => {
     return (
        <>     
             {
-              items.map(({title, price, image, stock, id}) => {
+              items.map(({title, price, image, stock, id, category}) => {
                 return (
-                        <Item
+                    <Item
                           key={id}
                           title={title}
                           price={price}
                           image={image}
                           stock={stock}
                           id={id}
+                          category={category}
                         />
                 )
               })

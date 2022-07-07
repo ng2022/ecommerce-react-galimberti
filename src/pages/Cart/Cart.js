@@ -2,9 +2,9 @@ import { Container, Button } from '@mui/material'
 import { Delete } from '@mui/icons-material';
 import TextField from '@mui/material/TextField';
 import { CartContext } from '../../context/CartContext'
-import { useContext, useState } from 'react'
+import { useContext, useState } from 'react';
 import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom";
 import './Cart.css'
 
 // FIRESTORE
@@ -162,7 +162,7 @@ const Cart = () => {
                         value={formValue.email}
                         onChange={handleChange} 
                     />
-                <button className='buttonCartWidget' type='submit'>Purchase</button>
+                <button className='buttonCartPurchase' type='submit'>Purchase</button>
             </form> )
             }
             
