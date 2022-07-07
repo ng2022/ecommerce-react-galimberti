@@ -18,7 +18,7 @@ import ThemeSwitch from './ThemeSwitch';
 import { ThemeContext } from '../../context/ThemeContext';
 
 //IMAGES
-import logo from '../../assets/icons/logo-ecommerce.png';
+import logo from '../../assets/icons/Unusual-People-Logo.png';
 
 
 
@@ -30,7 +30,7 @@ const categories = ['man', 'women']
     <nav>
         <ul>
             <li>
-                <Link to="/"><img src={logo} alt="logo" width="50px" /></Link>
+                <Link to="/" className='logoContainer'><img src={logo} alt="logo unusual people" width="150px" /></Link>
             </li>   
             <li>
                 <Link to="/">Home</Link>

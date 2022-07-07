@@ -12,6 +12,14 @@ ul {
     width: 100%;
 }
 
+.logoContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;    
+}
+
 ul li {
     list-style-type: none;
     font-family: 'Poppins', sans-serif;
